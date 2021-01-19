@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favicon.ico" type="image/ico">
+
+    <title>发送电服无法登陆邮件 | </title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <!-- sweetalert -->
+    <link rel="stylesheet" href="../vendors/sweetalert2.min.css">
+    <style>
+        .left{float: left; width: 10px;white-space: nowrap; } 
+        .right{width:calc(100% - 40px);}
+    </style>
+
+</head>
+
+<body class="nav-md">
+    <div  id="app">
+    <div class="container body">
+        <div class="main_container">
+            <!-- left -->
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title">
+                        <a href="Ten2Ten.html" class="site_title"><i class="fa fa-paw"></i> <span>在线客服系统</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="images/img.png" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span id="team">{{team}}</span>
+                            <h2 id="name">{{name}}</h2>
+                        </div>
+                        <div style="text-align: center;">
+                            <h2>Ver {{version}}</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br>
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section active">
+                            <a href="Ten2Ten.html" class="site_title"><span>回到首页</span></a>
+                            <ul class="nav side-menu" style>
+                                <li class="">
+                                    <a><i class="fa fa-home"></i> 日常工作记录 <span class="fa fa-chevron-down"></span></a>
+                                    <ul id="menu-first" class="nav child_menu" style="display:none;">
+                                        <li class="current-page"><a v-for="link in sidebarItem" @click="menuCkFun(link.permissionName,link.page)" :href="link.page">{{link.permissionName}}</a></li>
+                                    </ul>                   
+                                </li>
+                                <li class="" >
+                                    <a><i class="fa fa-edit"></i> 日常工作汇总/导出 <span class="fa fa-chevron-down"></span></a>
+                                    <ul id="menu-second" class="nav child_menu" style="display:none;">
+                                        <li class="current-page"><a v-for="link in sidebarItem" @click="menuCkFun(link.permissionName,link.page)" :href="link.page">{{link.permissionName}}</a></li>
+                                    </ul>                   
+                                   </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->                    
+                </div>
+            </div>
+            <!-- /left -->
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars" v-on:click="leftSitebar()"></i></a>
+                    </div>
+                    <nav class="nav navbar-nav">
+                        <ul class=" navbar-right">
+                            <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/img.png" alt="">{{name}}
+                                </a>
+                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right" v-on:click="delCookie()"></i> Log Out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main" >
+                    <div class="">
+                        <div class="page-title">
+                            <div class="title_left">
+                                <h3>发送电服无法登陆邮件</h3>
+                            </div>
+                            <div class="col-md-5 col-sm-5 form-group pull-right top_search">
+                                <div class="input-group"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                            <div class="x_panel">
+                                <div class="x_title">                                    
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                <div class="row">
+                                <div  class="col-md-12 col-sm-12 ">
+                                <div class="x_panel" style="font-size:large; float: left; ">    
+                                       
+                                    
+                                    
+                                    
+                                        <div class="item form-group" >
+                                            <div>
+                                            <label for="device" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;">登陆端口：</label>
+                                           </div>   
+                                               
+                                                <div class="col-md-3 col-sm-3" style="display: inline-block;">
+                                                <select class="form-control"  id = "device" style="width:100%;"  v-model="recordData.entranceType" v-on:change="changeSelectFunc(2)">
+                                                        <option value="0">登陆端口</option><!-- int -->
+                                                        <option v-for="items in devices" :value="items.id">
+                                                          {{items.type}}</option>                                               
+                                                </select>
+                                               </div>    
+                                        </div>  
+                                        <div class="item form-group"  >
+                                            <div>
+                                                <label for="device" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;">问题描述：</label>
+                                               </div> 
+                                            <div class="col-md-3 col-sm-3" >
+                                            <textarea required="required" name="issueDescription" style="width:100%;" 
+                                            placeholder="问题描述"  v-model="recordData.issueDescription"></textarea>
+                                            </div>  
+                                        </div>
+                                        <div class="item form-group"  >
+                                            <div>
+                                            <label for="cDate" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;">提交日期：</label>
+                                        </div>
+                                            <div class="col-md-3 col-sm-3">
+                                            <input  id="cDate" class="form-control" style="width:100%;"  type="date" name="cDate"   v-model="recordData.cDate">
+                                            </div>                                            
+                                        </div>
+                                        <div class="item form-group"  >
+                                            <div>
+                                            <label for="cTime"class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >提交时间：</label>
+                                        </div>
+                                            <div class="col-md-3 col-sm-3">
+                                            <input id="cTime" class="form-control" style="width:100%;" type="time" name="cDate"  v-model="recordData.cTime">
+                                            </div>
+                                        </div>
+                                        <div class="item form-group" >                                     
+                                                <button type="button" class="btn btn-primary" v-on:click="AddedRecord()">新增纪录</button>
+                                                <button type="button" class="btn btn-danger" v-on:click="ClearFun()">清空</button>      
+                                                <button type="button" class="btn btn-success"v-on:click="Edit()">编辑纪录</button>   
+                                        </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                           </div>
+                    </div>              
+                  </div>
+            </div>           
+       </div>
+    
+    </div>
+    <footer >
+        <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+
+
+    <script type="text/javascript"></script>
+    <!-- jQuery -->
+    <script src="..//vendors/jquery/dist/jquery.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="../vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../vendors/Flot/jquery.flot.js"></script>
+    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->    
+    <script src="../jsagent/sweetalert2.min.js"></script>
+    <script src="../js/Common.js"></script>
+    <script src="../jsagent/vue.js"></script>
+    <script src="../jsagent/axios.min.js"></script>
+    <script src="../build/js/custom.min.js"></script>
+    <script src="../jsagent/sweetalert.min.js"></script>
+    <script src="../js/mailIssue.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>技术测试部 |Help Desk</title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/bootstrap-theme.min.css">
+   <!-- sweetalert -->
+   <link rel="stylesheet" href="../vendors/sweetalert2.min.css">
+    <!-- CSS -->
+    <style>
+        #login-element{
+            right: 0px;
+    margin: 0px auto;
+    margin-top: 5%;
+    max-width: 350px;
+    position: relative;}
+    #login-content{margin: 0 auto;
+    padding: 25px 0 0;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    min-width: 280px;}
+    #login-content input[type="text"]{border-radius: 3px;box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    border: 1px solid #c8c8c8;
+    color: #777;
+    margin: 0 0 20px;
+    width: 100%;}
+    #login_content input[type="submit"]{
+    float: left;
+    margin-left: 38px;
+    }
+
+    .separator{border-top: 1px solid #D8D8D8;
+    margin-top: 10px;
+    padding-top: 10px}
+
+    </style>
+  
+    
+    
+</head>
+
+<body id="bg">
+    
+    <div>
+           <div id="wrapper">
+                <section id="login-element" >
+                    <div id="login-content">
+                        <h3>在线客服系统登入</h3>
+                        <div >
+                            <input type="text" id="" value="" v-model="userid"  class="form-control" placeholder="账号"></TextBox>
+                        </div>
+                        <div>
+                            <input type="password" id="" value="" v-model="pwd" runat="server" class="form-control" placeholder="密码" TextMode="Password"></TextBox>
+                        </div>
+                        <div>
+                            <div>
+                                <input type="submit"   @click="chkAccountFun()"  value="登入" class="btn btn-default submit" >
+                                <input type="submit"  value="清除" class="btn btn-default submit" >
+                            </div>
+                        </div>
+                        <div id="version">Ver1.0.0.2</div>
+                        <div >
+                            <p id="responseMsg" style="color: blue;"></p>
+                        </div>
+                        <div class="separator"></div>
+                </div>
+                </section>
+           </div>
+    </div>
+  
+
+  <!-- JS -->
+  <script src="../vendors/jquery/dist/jquery.js"></script>
+  <script src="../jsagent/sweetalert2.min.js"></script>
+  <script src="../js/Common.js"></script>
+  <script src="../jsagent/vue.js"></script>
+  <script src="../jsagent/axios.min.js"></script>
+  <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/Login.js"></script>
+
+</body>

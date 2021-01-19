@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   <!-- RWD -->
+    
+    
+    <title>晚上22点-次日10点的会员反馈给电服</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.datatables.net/fixedheader/3.1.3/css/fixedHeader.dataTables.min.css" rel="stylesheet" />
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+     <!-- Datatables -->
+    
+     <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+     <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+     <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+     <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+     <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    
+    
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <style>
+      .left{float: left; width: 40px;white-space: nowrap; } 
+      .right{width:calc(100% - 40px);}
+      .dataTable th {white-space: nowrap !important;}
+    </style>
+
+</head>
+
+<body class="nav-md">
+
+<div  id="app">
+    <div class="container body" >
+     <div class="main_container">
+        <div class="col-md-3 left_col">
+            <!-- lift -->
+           <div class="left_col scroll-view">
+               <div class="navbar nav_title" style="border: 0;">
+                   <a href="Ten2Ten.html"  class="site_title"><i class="fa fa-paw" @click="leftSitebar()"></i> <span>在线客服系统</span></a>
+               </div>
+               <div class="clearfix"></div>
+               <!-- menu profile quick info -->
+               <div class="profile clearfix">
+                   <div class="profile_pic">
+                       <img src="images/img.png" alt="..." class="img-circle profile_img">
+                   </div>
+                   <div class="profile_info">
+                       <span id="team">{{team}}</span>
+                       <h2 id="name">{{name}}</h2>
+                   </div>
+                   <div style="text-align: center;">
+                    <h2>Ver {{version}}</h2>
+                  </div>
+               </div>
+               <!-- /menu profile quick info -->
+               <br />
+
+               <!-- sidebar menu -->
+               <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                   <div class="menu_section active">
+                       <a href="Ten2Ten.html" class="site_title"><span>回到首页</span></a>
+                       <ul class="nav side-menu" style>
+                           <li class="">
+                           <a><i class="fa fa-home"></i> 日常工作记录 <span class="fa fa-chevron-down"></span></a>
+                           <ul id="menu-first" class="nav child_menu" style="display:none;">
+                               <li class="current-page"><a v-for="link in sidebarItem" @click="menuCkFun(link.permissionName,link.page)" :href="link.page">{{link.permissionName}}</a></li>
+                           </ul>                   
+                           </li>
+                           <li class="" >
+                            <a><i class="fa fa-edit"></i> 日常工作汇总/导出 <span class="fa fa-chevron-down"></span></a>
+                            <ul id="menu-second" class="nav child_menu" style="display:none;">
+                                <li class="current-page"><a v-for="link in sidebarItem" @click="menuCkFun(link.permissionName,link.page)" :href="link.page">{{link.permissionName}}</a></li>
+                            </ul>                   
+                           </li>
+                       </ul>                                   
+                   </div>
+               </div>
+               <!-- /sidebar menu -->
+           </div>
+               <!-- /left -->
+       </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars" v-on:click="leftSitebar()"></i></a>
+                    </div>
+                    <nav class="nav navbar-nav">
+                        <ul class=" navbar-right">
+                            <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/img.png" alt="">{{name}}
+                                </a>
+                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right" v-on:click="delCookie()"></i> Log Out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+
+             <!-- mainpage -->
+             <div class="right_col" role="main" >
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>晚上22点-次日10点的会员反馈-網路</h3>
+                        </div>
+                        <div class="col-md-5 col-sm-5 form-group pull-right top_search">
+                            <div class="input-group"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="x_panel">
+                            <div class="x_title">                                    
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                   <div  class="col-md-12 col-sm-12 ">
+                                <div class="x_panel"  style="font-size:large;">
+                                    <div class="x_title" >
+                                        <h2>维护及新增</h2>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content" >
+                                    <div class="row" style="margin-bottom: 10px; color: black; ">
+                                    <div class="col-md-8  col-sm-6">
+                                    <form class="" action="" method="post" style="width: auto; height: auto ;margin-bottom:10px; float: left;">                                       
+                                    
+                                        <div class="field item form-group" >
+                                        <div>
+                                            <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;">登陆端口：</label>
+                                        </div>
+                                        
+                                        <select class="form-control" style="width:calc(100%-40px);"  v-model="issuedata.entranceType" v-on:change="changeSelectFunc(0)">
+                                                <option value="0">登陆端口</option><!-- int -->
+                                                <option v-for="items in entranceType" :value="items.id">
+                                                  {{items.type}}</option>
+                                        </select>
+                                       </div>
+                                       
+                                       <div class="field item form-group"  >
+                                        <div>
+                                        <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >提交日期：</label>
+                                       </div>
+                                       <input class="form-control" style="width:calc(100%-40px);" type="date" name="cDate"  v-model="issuedata.createDate">
+                                       </div>
+
+                                       <div class="field item form-group"  >
+                                         <div>
+                                        <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >提交时间：</label>
+                                        </div>  
+                                        <input class="form-control" style="width:calc(100%-40px);" type="time" name="cDate"  v-model="issuedata.createTime">
+                                       </div>
+                                       <div class="field item form-group" style=" margin-left: 2px;">
+                                        <div>
+                                            <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >问题描述：</label>
+                                        </div>  
+                                        <textarea name="issueDescription" style="width:calc(100%-40px);" placeholder="问题描述"  v-model="issuedata.issueDescription"></textarea>
+                                       </div>   
+                                       <div class="field item form-group" >
+                                        <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;">致电名单：</label>
+                                        <input class="form-control" style="width:calc(100%-40px);"  name="userID" placeholder="test1234" v-model="issuedata.userID">
+                                      </div>
+                                       <div class="field item form-group"  >
+                                        <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >致电日期：</label>
+                                        <input class="form-control" style="width:calc(100%-40px);" type="date" name="cDate"  v-model="issuedata.callDate">
+                                       </div>
+                                    
+                                    <div class="field item form-group"  >
+                                        <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >致电時間：</label>
+                                        <input class="form-control" style="width:calc(100%-40px);" type="time" name="cDate"  v-model="issuedata.callTime">
+                                    </div>
+                                    <div class="field item form-group" style=" margin-left: 2px;">
+                                        <div>
+                                            <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >致电目的：</label>
+                                        </div>  
+                                        <textarea name="issueDescription" style="width:calc(100%-40px);" placeholder="致電目的"  v-model="issuedata.purpose"></textarea>
+                                    </div>  
+                                    <div class="field item form-group"  >
+                                        <div>
+                                        <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >要求回电日期：</label>
+                                       </div>
+                                        <input class="form-control" style="width:calc(100%-40px);" type="date" name="AskingDate"  v-model="issuedata.askingDate">
+                                       </div>                                    
+                                    <div class="field item form-group"  >
+                                        <div>
+                                        <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >要求回电时间：</label>
+                                    </div>
+                                        <input class="form-control" style="width:calc(100%-40px);" type="time" name="AskingTime"  v-model="issuedata.askingTime">
+                                    </div>
+                                    <div class="field item form-group" >
+                                        <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;">接通情况：</label>
+                                        <select class="form-control" style="width:calc(100%-40px);"  v-model="issuedata.answerStatus" v-on:change="changeSelectFunc(1)">
+                                            <option value="0">請選擇</option><!-- int -->
+                                            <option v-for="items in anwserStatus" :value="items.id">
+                                              {{items.type}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="field item form-group" style=" margin-left: 2px;">
+                                        <div>
+                                            <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >沟通内容：</label>
+                                        </div>  
+                                        <textarea name="issueDescription" style="width:calc(100%-40px);" placeholder="溝通內容"  v-model="issuedata.content"></textarea>
+                                    </div>   
+                                    <div class="field item form-group" style=" margin-left: 2px;">
+                                        <div>
+                                            <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >反馈问题：</label>
+                                        </div>  
+                                        <textarea name="issueDescription" style="width:calc(100%-40px);" placeholder="反饋問題"  v-model="issuedata.responseResult"></textarea>
+                                    </div>   
+                                    <div class="field item form-group" style=" margin-left: 2px;">
+                                        <div>
+                                            <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >处理建议：</label>
+                                        </div>  
+                                        <textarea name="issueDescription" style="width:calc(100%-40px);" placeholder="處理建議"  v-model="issuedata.suggestion"></textarea>
+                                    </div>
+                                    <div class="field item form-group" >
+                                        
+                                        <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;">是否解决:</label>
+                                            <select class="form-control" style="width:calc(100%-40px);"  v-model="issuedata.solve" v-on:change="changeSelectFunc(2)">
+                                                <option value="0">請選擇</option><!-- int -->
+                                                <option v-for="items in solve" :value="items.id">
+                                                  {{items.type}}</option>
+                                            </select>
+                                    </div>
+                                    <div class="field item form-group" style=" margin-left: 2px;">
+                                        <div>
+                                            <label for="title" class="col-form-label col-md-4 col-sm-3" style="white-space:nowrap; text-align: left; margin-right: 2px;" >电话客服：</label>
+                                        </div>  
+                                        <textarea name="eserviceID" style="width:calc(100%-40px);" placeholder="电话客服"  v-model="issuedata.eserviceID"></textarea>
+                                    </div>  
+
+                                    <div class="field item form-group" >                                               
+                                                <button type="button" class="btn btn-primary" v-on:click="AddedRecord()">新增纪录</button>
+                                                <button type="button" class="btn btn-danger" v-on:click="ClearFun()">清空</button>      
+                                                <button type="button" class="btn btn-success"v-on:click="Edit()">编辑纪录</button>                                                
+                                        </div>
+                                   <div class="separator"></div>
+                                </form>
+                              </div>
+                                   </div>
+                                    </div>
+
+                            </div>
+                                   </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+              </div>
+        </div> 
+            <!-- mainpage -->
+    </div>            
+    </div>         
+         <footer >
+            <div class="pull-right">
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+</div>
+   
+
+   
+
+    <script type="text/javascript"></script>
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.js"></script>    
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="../vendors/jszip/dist/jszip.min.js"></script>
+    <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+    <!-- DateJS -->
+    <script src="../vendors/DateJS/build/date.js"></script>  
+    <!-- bootstra..daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../js/Common.js"></script>
+    <script src="../jsagent/vue.js"></script>
+    <script src="../jsagent/axios.min.js"></script>
+    <script src="../jsagent/jquery-datatable.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.3/js/dataTables.fixedHeader.min.js"></script>
+    <script src="../jsagent/datatablescripts.bundle.js"></script>
+    <script src="../jsagent/dataTables.buttons.min.js"></script>
+    <script src="../build/js/custom.min.js"></script>
+    
+    <script src="../js/ManagementTen2Ten.js"></script>  
+   
+
+    
+</body>
+</html>
